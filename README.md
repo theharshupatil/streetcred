@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StreetCred 🛒
 
-## Getting Started
+> Digital identity for India's 10M+ street vendors using World ID ZK proofs and Hypercerts
 
-First, run the development server:
+## Problem
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+India has over 10 million street vendors. They have **no verifiable digital identity** — blocking them from:
+- Government welfare schemes (PM SVANidhi, etc.)
+- Micro-loans and credit
+- Digital commerce platforms
+
+## Solution
+
+StreetCred gives every street vendor a **privacy-preserving digital identity** using:
+- **World ID** — ZK proof of personhood (one vendor, one identity, no duplicates)
+- **Hypercerts** — Impact certificate minted on-chain as proof of joining the formal economy
+
+## How It Works
+
+1. Vendor opens StreetCred
+2. Verifies identity via **World ID** (ZK proof — no biometric data stored)
+3. Creates vendor profile (name, trade, location)
+4. **Hypercert** is minted as an impact certificate
+5. Vendor gets a shareable digital ID card with reputation score
+
+## Sponsor Tech Integration
+
+### World ID
+- ZK proof of personhood via `/api/verify` endpoint
+- Nullifier hash stored per vendor (prevents duplicate registrations)
+- Protocol version: World ID 4.0
+
+### Hypercerts
+- Impact certificate minted per verified vendor via `/api/hypercert` endpoint
+- Certificate proves vendor's contribution to India's formal economy
+- Unique `HC-` prefixed certificate ID issued on Optimism
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 + React
+- **Backend**: Next.js API Routes
+- **Identity**: World ID (ZK proofs)
+- **Impact Certificates**: Hypercerts
+- **Deployment**: Vercel-ready
+
+## Architecture
+```
+User → Landing Page
+     → [Verify with World ID] → /api/verify (ZK proof validation)
+     → Vendor Profile Form
+     → [Register] → /api/hypercert (mint impact certificate)
+     → Verified Vendor Card + Hypercert ID
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup
+```bash
+git clone https://github.com/theharshupatil/streetcred
+cd streetcred
+npm install
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Demo
 
-## Learn More
+[Watch Demo Video](#) <!-- Add your video link here -->
 
-To learn more about Next.js, take a look at the following resources:
+## Track
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Infrastructure & Digital Rights
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Sponsors Used
 
-## Deploy on Vercel
+- World ID (proof of personhood)
+- Hypercerts (impact certificates)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Team
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Harshvardhan Patil
