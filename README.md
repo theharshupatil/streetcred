@@ -174,16 +174,4 @@ A centralised database can be corrupted or deleted. An IPFS content-addressed re
 
 ---
 
-## 📋 Submission Checklist
-
-- [x] Project name on DevSpot — **StreetCred**
-- [x] Project description
-- [x] Sponsor tech integrated — World ID + IPFS (Pinata) + Hypercerts
-- [x] GitHub repository (public)
-- [ ] Demo video (2–3 min)
-- [x] Track — Infrastructure & Digital Rights
-- [ ] Submission marked as FINAL
-
----
-
 *Built at PL Genesis Hackathon · March 2026*
