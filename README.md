@@ -36,47 +36,6 @@ A bank, NGO, or government officer scans the QR → sees a World-ID-verified, IP
 
 ---
 
-## 🏗️ Architecture
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                    STREET VENDOR                        │
-│                 (just needs a phone)                    │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-              ┌───────▼────────┐
-              │  StreetCred    │
-              │  Next.js App   │
-              └──┬──────────┬──┘
-                 │          │
-    ┌────────────▼──┐   ┌───▼──────────────────┐
-    │  World ID     │   │  Next.js API Routes   │
-    │               │   │                       │
-    │  ZK Proof     │   │  POST /api/verify     │
-    │  on-device    │   │  POST /api/hypercert  │
-    │  Nullifier    │   │  GET  /api/vendors    │
-    └────────────┬──┘   └───┬──────────────────┘
-                 │           │
-                 │     ┌─────▼──────────────────┐
-                 │     │   IPFS via Pinata       │
-                 │     │                         │
-                 │     │  Vendor profile JSON    │
-                 │     │  pinned permanently     │
-                 │     │  Returns CIDv1 hash     │
-                 │     └─────┬──────────────────┘
-                 │           │
-        ┌────────▼───────────▼──────────────────┐
-        │           VENDOR ID CARD               │
-        │                                        │
-        │  ✅ World ID Verified                  │
-        │  📦 IPFS CID  →  ipfs.io/ipfs/{cid}   │
-        │  🏅 Hypercert ID                       │
-        │  📱 QR Code (scannable by banks/govt)  │
-        └────────────────────────────────────────┘
-```
-
----
-
 ## 🔌 Sponsor Tech — Deep Integration
 
 ### 🌐 World ID
