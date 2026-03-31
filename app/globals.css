@@ -1,6 +1,18 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080c18;
+  --foreground: #f0f4ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.08); }
 }
 
 @media (prefers-color-scheme: dark) {

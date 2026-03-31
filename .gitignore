@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local vendor database (contains registration data)
+data.json
+
+# unused vite scaffold
+/src/
