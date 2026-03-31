@@ -90,7 +90,6 @@ ID Card
 
 ### Prerequisites
 - Node.js 18+
-- Free [Pinata](https://pinata.cloud) account — no card required
 
 ### Install & Run
 
@@ -99,14 +98,6 @@ git clone https://github.com/theharshupatil/streetcred
 cd streetcred
 npm install
 ```
-
-Create `.env` in the root:
-
-```env
-PINATA_JWT=your_pinata_jwt_here
-```
-
-Get your JWT: pinata.cloud → API Keys → New Key → Admin → Copy JWT
 
 ```bash
 npm run dev
